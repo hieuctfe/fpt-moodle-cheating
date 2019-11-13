@@ -1,0 +1,57 @@
+{
+  "name": "App test",
+  "version": "0.0.2",
+  "manifest_version": 2,
+  "description": "đây là app đầu tiên 2",
+  "icons": {
+    "16": "img/icon-16.png",
+    "128": "img/icon-128.png"
+  },
+  "background": {
+    "scripts": [
+      //      "script/chromereload.js"
+          //  "script/direct.js"
+    ]
+  },
+  "browser_action": {
+    //    "default_icon": {
+    //      "19": "images/icon-19.png",
+    //      "38": "images/icon-38.png"
+    //    },
+    "default_title": "Hiếu Ext",
+    "default_popup": "popup.html"
+  },
+  //  "page_action": {...} ,
+  "options_page": "option.html",
+  "content_scripts": [
+    {
+      "css": [
+        "css/style.css"
+      ],
+      "matches": [
+        "*://lms-undergrad.fpt.edu.vn/*",
+        "file:///Users/hieuctfe/Downloads/Quiz_01.html",
+        "*://ems.fus.edu.vn/*"
+        // "*://best.aliexpress.com/*",
+        // "*://aliexpress.com/*"
+      ],
+      "js": [
+        "/node_modules/jquery/dist/jquery.min.js",
+        "script/direct.js",
+        "script/main2.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "img/flag.png"
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "cookies",
+    "<all_urls>",
+    "*://lms-undergrad.fpt.edu.vn/*"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
